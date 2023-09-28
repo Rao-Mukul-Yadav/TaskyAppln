@@ -122,6 +122,7 @@ const deleteTask = (e) => {
   const targetId = e.target.getAttribute("name");
   const type = e.target.tagName;
   const removeTask = state.taskList.filter(({ id }) => id !== targetId);
+  state.taskList = removeTask;
   updateLocalStorage();
 
   if (type === "BUTTON") {
